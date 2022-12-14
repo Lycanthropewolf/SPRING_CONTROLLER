@@ -11,20 +11,20 @@ import java.util.List;
 @RestController
 @RequestMapping("/order")
 
-public class OrderController {
+public class OrderController  {
 
-    private final CartService cartService;
+    private final CartService  cartService;
 
-    public OrderController(CartService cartService) {
+    public OrderController( CartService cartService) {
         this.cartService = cartService;
     }
 @GetMapping("/add")
-    public void add(@RequestParam("id")List<Integer>ids){
-        this.cartService.addToCart(ids);
+    public void add(@RequestParam("id") List< Integer>ids){
+        this.cartService.addToCart (ids);
 }
 
 @GetMapping("/get")
-    public List<Integer>get(){
+    public List<Integer> get(){
         return this.cartService.getCart();
 }
 
